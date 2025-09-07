@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register</title>
+</head>
+<body>
+<h1>Register</h1>
+<form method="get">
+  <div>
+  <label for="usrname">Username</label>
+  <input
+    type="text"
+    id="usrname"
+    name="username"
+    placeholder="John"
+    minlength="3"
+    maxlength="8"
+    required
+  >
+  </div>
+  <div>
+  <label for="pwd">Password</label>
+  <input
+    type="password"
+    id="pwd"
+    name="password"
+    minlength="3"
+    maxlength="8"
+    required
+  >
+  </div>
+  <div>
+  <label for="eml">Email</label>
+    <input
+    type="email"
+    id="eml"
+    name="email"
+    required
+    >
+  </div>
+  <div>
+    <label for="male">Male</label>
+    <input
+      type="radio"
+      id="male"
+      name="sex"
+      value="male"
+      required
+    >
+    <label for="female">Female</label>
+    <input
+      type="radio"
+      id="female"
+      name="sex"
+      value="female"
+      required
+    >
+  </div>
+  <div>
+    <label for="accept-terms">I accept terms and conditions</label>
+    <input
+      type="checkbox"
+      id="accept-terms"
+      required
+    >
+  </div>
+  <div>
+    <label for="accept-newsletter">Subscribe to newsletter</label>
+    <input
+      type="checkbox"
+      id="accept-newsletter"
+    >
+  </div>
+  <div>
+    <select name="city" id="city">City>
+      <option value="moscow">Moscow</option>
+      <option value="st.petersburg">St. Petersburg</option>
+      <option value="usa">USA</option>
+    </select>
+  </div>
+  <div>
+  <label for="address"></label>
+  <textarea
+    name="address"
+    id="address"
+    cols="30"
+    rows="3"
+    placeholder="Ul. Pushkina, d. 1"
+    required
+  ></textarea>
+  </div>
+  <div>
+    <label for="birthday">Birth Day</label>
+    <input
+      type="date"
+      id="birthday"
+      required
+    >
+  </div>
+  <input type="submit" value="Register">
+</form>
+</body>
+</html>

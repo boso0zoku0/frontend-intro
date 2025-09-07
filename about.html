@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A brief introduction for me">
+  <title>About Me</title>
+</head>
+
+<style>
+  body {
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+
+    header > h1 {
+      margin: 2px 0;
+    }
+
+    img {
+      margin: 10px;
+    }
+
+    img.avatar {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .shadow {
+      box-shadow: 5px 5px 10px #888;
+    }
+
+    .quotes {
+      margin: 10px 0;
+      padding: 8px 1px;
+    }
+
+    .quotes > h2 {
+      margin: 15px 0;
+    }
+
+    .quote {
+      margin-left: 10px;
+      padding-left: 7px;
+      border-left: 5px solid #c4e764;
+      font-style: italic;
+    }
+  }
+</style>
+
+<body>
+<nav class="navbar navbar-expand bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<header>
+
+
+  <h1>Basic information</h1>
+
+</header>
+
+<main>
+  <img
+    class="avatar shadow"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTefijfW4aq94iddgV0bJ_p0ZJ7Iff8JbQYbg&s"
+    alt="">
+  <p>The man was born around 2000</p>
+  <h2>Human hobbies</h2>
+  <ul>
+    <li>Sports</li>
+    <li>Programming</li>
+    <li>Food</li>
+    <li>Sleep</li>
+  </ul>
+
+  <h3>A person considers the main character traits, namely:</h3>
+  <ol>
+    <li>Honesty</li>
+    <li>Intentionality</li>
+  </ol>
+  <p><i>I guess that's all</i></p>
+
+  <div class="quotes">
+    <h2>My favoutite quotes</h2>
+    <p class="quote">"What can a rational person comprehend and what can he close his eyes on so that he can achieve." -
+      Albert Einstein</p>
+    <p class="quote">"The hardest thing is to start acting, everything else depends only on persistence." - Amelia
+      Earhart -</p>
+  </div>
+
+  <h4>Oh yeah, I'll leave my social networks here:</h4>
+  <ul>
+    <li><a href="https://web.telegram.org/k/#777000">Telegram</a></li>
+    <li><a href="https://vk.com/id510018985">Vkontakte</a></li>
+    <li><strong>Bye</strong></li>
+  </ul>
+
+  <div>
+    Clicker
+    <div id="clicker">
+      Click count: <span id="click-count">0</span>
+    </div>
+    <button type="button" id="click-button">Click</button>
+    <button type="button" id="button-reset">Reset</button>
+  </div>
+
+</main>
+<footer>
+  &copy; Bosozoku, <span id="year">2025</span>
+</footer>
+
+<script>
+  const quotes = Array.from((document.querySelectorAll(".quote")))
+  let count = 0
+  quotes.forEach((quote) => {
+    count += 1
+    quote.innerText = count + ". " + quote.innerText
+  })
+
+</script>
+
+<script>
+  const spanYear = document.getElementById("year");
+  spanYear.innerText = (new Date()).getFullYear().toString();
+
+</script>
+
+<script>
+  const getButtonReset = document.getElementById("button-reset")
+  const getButtonClick = document.getElementById("click-button")
+  const getElementClick = document.getElementById("click-count")
+  let countClick = 0
+
+  function handleClick() {
+    countClick += 1;
+    result = getElementClick.innerText = countClick;
+    if (result >= 10) {
+      window.location.reload()
+    }
+  }
+
+
+  function handleReset() {
+    countClick = 0
+    getElementClick.innerText = countClick;
+
+  }
+
+  getButtonClick.addEventListener('click', handleClick)
+  getButtonReset.addEventListener('click', handleReset)
+</script>
+
+</body>
+</html>
