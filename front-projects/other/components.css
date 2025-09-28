@@ -1,0 +1,44 @@
+/* HTML: <div class="loader"></div> */
+.loader {
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 30px;
+  animation: l1 1s linear infinite alternate;
+  padding-left: 710px;
+  margin-bottom: 110px;
+  box-shadow: 10px 5px 5px blueviolet;
+
+
+}
+.loader:before {
+  content:"Loading..."
+}
+
+@keyframes l1 {to{opacity: 0}}
+
+
+html {
+  font-family: helvetica, arial, sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  column-span: all;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: red;
+  letter-spacing: 1px;
+  break-before: column;
+}
+
+p {
+  line-height: 1.5;
+}
+
+article {
+  column-width: 200px;
+  gap: 20px;
+}
