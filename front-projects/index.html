@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About me</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="idea.html">
 </head>
 <style>
   body {
@@ -64,6 +65,10 @@
           <a class="nav-link" href="#quotes" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Quotes
           </a>
+
+        <li class="nav-item">
+          <a class="nav-link" href="idea.html">Leaderboard</a>
+        </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -132,8 +137,8 @@
     </ol>
     <p><i>I guess that's all</i></p>
 
-    <div id="quotes">
-      <h2>My favorite quotes</h2>
+    <div>
+      <h2 id="quotes">My favorite quotes</h2>
       <p class="blockquote">"What can a rational person comprehend and what can he close his eyes on so that he can
         achieve." - Albert Einstein</p>
       <p class="blockquote">"The hardest thing is to start acting, everything else depends only on persistence." -
@@ -204,7 +209,7 @@
       <div id="clicker">
         Click count: <span id="click-count" class="badge text-bg-dark fs-5">0</span>
       </div>
-      <button type="button" id="click-button" class="btn btn-primary mt-4">Click</button>
+      <button type="button" id="button-click" class="btn btn-primary mt-4">Click</button>
       <button type="button" id="button-reset" class="btn btn-warning mt-4">Reset</button>
     </div>
 
@@ -227,9 +232,12 @@
 
   </script>
 
+
+
+
   <script>
     const getButtonReset = document.getElementById("button-reset")
-    const getButtonClick = document.getElementById("click-button")
+    const getButtonClick = document.getElementById("button-click")
     setInterval(() => getButtonClick.hidden = !getButtonClick.hidden, 700)
     setInterval(() => getButtonReset.hidden = !getButtonReset.hidden, 1500)
     const getElementClick = document.getElementById("click-count")
@@ -243,8 +251,6 @@
       }
 
     }
-
-
     function handleReset() {
       countClick = 0
       getElementClick.innerText = countClick;
